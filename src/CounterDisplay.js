@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const CounterDisplay = ({ initialCount = 0 }) => {
-	const [count, setCount] = useState(initialCount);
+const CounterDisplay = ({ count, reset, decrement, increment }) => {
 	return (
 		<>
 			Count: {count}
-			<button onClick={() => setCount(initialCount)}>Reset</button>
-			<button onClick={() => setCount((prevCount) => prevCount - 1)}>-</button>
-			<button onClick={() => setCount((prevCount) => prevCount + 1)}>+</button>
+			<button onClick={reset}>Reset</button>
+			<button onClick={decrement}>-</button>
+			<button onClick={increment}>+</button>
 		</>
 	);
 };
