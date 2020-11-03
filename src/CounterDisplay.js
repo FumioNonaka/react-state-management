@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AppContext } from './App';
+import { AppContext } from './AppContext';
 
 const CounterDisplay = () => {
 	const { count, reset, decrement, increment } = useContext(AppContext);

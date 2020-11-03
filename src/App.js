@@ -1,20 +1,15 @@
-import React, { createContext, useState } from 'react';
+import React from 'react';
+import { AppProvider } from './AppContext';
 import CounterDisplay from './CounterDisplay';
 import './App.css';
 
-const initialCount = 0;
-export const AppContext = createContext(initialCount);
 function App() {
-	const [count, setCount] = useState(initialCount);
-	const reset = () => setCount(initialCount);
-	const decrement = () => setCount((prevCount) => prevCount - 1);
-	const increment = () => setCount((prevCount) => prevCount + 1);
 	return (
-		<AppContext.Provider value={{ count, reset, decrement, increment }}>
+		<AppProvider>
 			<div className="App">
 				<CounterDisplay />
 			</div>
-		</AppContext.Provider>
+		</AppProvider>
 	);
 }
 
