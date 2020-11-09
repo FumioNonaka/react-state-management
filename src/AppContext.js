@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from 'react';
 import reducer from './reducder';
 
 const initialCount = 0;
-export const AppContext = createContext(initialCount);
+export const AppContext = createContext({ count: initialCount });
 export const AppProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, { count: initialCount });
 	const reset = () => dispatch({ type: 'reset' });
