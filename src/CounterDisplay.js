@@ -1,8 +1,8 @@
 import React from 'react';
-import { useCounter } from './useCounter';
+import { CounterContainer } from './useCounter';
 
 const CounterDisplay = () => {
-	const { count, reset, decrement, increment } = useCounter();
+	const { count, reset, decrement, increment } = CounterContainer.useContainer();
 	return (
 		<>
 			Count: {count}
